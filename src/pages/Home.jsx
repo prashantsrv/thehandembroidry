@@ -9,6 +9,8 @@ import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapest
 import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.png'
 import heroImg from '../assets/hero.png'
 import peacockImg from '../assets/peacock.png'
+import threadSpoolsImg from '../assets/thread-spools.png'
+import goldWireCoilsImg from '../assets/gold-wire-coils.png'
 import customDesignImg from '../assets/regalia/custom-design.png'
 import officerCapsImg from '../assets/regalia/officer-caps.png'
 import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
@@ -454,12 +456,12 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-5">
             <img
-              src={ph(400, 500, 'Thread Spools')}
+              src={threadSpoolsImg}
               alt="Colorful thread spools"
               className="w-full h-full self-end object-cover rounded border border-gold/20"
             />
             <img
-              src={ph(400, 500, 'Gold Wire Coils')}
+              src={goldWireCoilsImg}
               alt="Gold bullion wire coils"
               className="w-full h-full object-cover rounded border border-gold/20"
             />
