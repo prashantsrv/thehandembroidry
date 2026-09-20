@@ -17,6 +17,10 @@ import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapest
 import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.png'
 import heroImg from '../assets/hero.png'
 import peacockImg from '../assets/peacock.png'
+import customDesignImg from '../assets/regalia/custom-design.png'
+import officerCapsImg from '../assets/regalia/officer-caps.png'
+import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
+import bespokePatchesImg from '../assets/regalia/bespoke-patches.png'
 
 const ph = (w, h, text, bg = '1a2338', fg = 'd4a537') =>
   `https://placehold.co/${w}x${h}/${bg}/${fg}?text=${encodeURIComponent(text)}&font=playfair-display`
@@ -75,25 +79,25 @@ const portfolio = [
 
 const regaliaCategories = [
   {
-    img: ph(500, 500, 'Custom Design'),
+    img: customDesignImg,
     title: 'Custom Design',
     description:
       'We create custom hand-embroidered badges, logos, patches, with fine detailing, premium threads, and an elegant finish.',
   },
   {
-    img: ph(500, 500, 'Officer Caps'),
+    img: officerCapsImg,
     title: 'Officer Caps',
     description:
       'We make formal officer caps for military, police, naval, airline, and other uniformed officers, symbolizing authority, discipline, and professionalism.',
   },
   {
-    img: ph(500, 500, 'Shoulder Boards'),
+    img: shoulderBoardsImg,
     title: 'Shoulder Boards',
     description:
       'Shoulder boards are crafted from quality fabrics and often feature embroidered insignias, woven patterns, or metallic threads in various elegant styles.',
   },
   {
-    img: ph(500, 500, 'Bespoke Patches'),
+    img: bespokePatchesImg,
     title: 'Bespoke Patches',
     description:
       'Precision custom patches, crests, and bullion decorations tailored to airline, yacht, and royal clubs.',
