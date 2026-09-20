@@ -1,14 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaMedal,
-  FaPencilAlt,
-  FaTruck,
-  FaHashtag,
-  FaCheckCircle,
-} from 'react-icons/fa'
+import { FaMedal, FaPencilAlt, FaTruck, FaHashtag, FaCheckCircle } from 'react-icons/fa'
 import Seo from '../components/Seo'
 import sovereignSealBadge from '../assets/portfolio/sovereign-seal-badge.png'
 import visorCapLeaf from '../assets/portfolio/visor-cap-leaf.png'
@@ -232,12 +224,6 @@ export default function Home() {
       ? portfolio
       : portfolio.filter((item) => item.category === activeCategory)
 
-  function scrollCarousel(dir) {
-    const el = carouselRef.current
-    if (!el) return
-    el.scrollBy({ left: dir * 320, behavior: 'smooth' })
-  }
-
   useEffect(() => {
     let frameId
     const pxPerFrame = 0.6
@@ -407,19 +393,12 @@ export default function Home() {
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6">
           <h2 className={`${sectionHeading} text-gold`}>Our Custom Embroidery</h2>
-          <div className="flex items-center gap-4 mb-10 mt-10">
-            <button
-              onClick={() => scrollCarousel(-1)}
-              aria-label="Previous"
-              className="shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
-            >
-              <FaChevronLeft />
-            </button>
+          <div className="mb-10 mt-10">
             <div
               ref={carouselRef}
               onMouseEnter={() => (carouselPaused.current = true)}
               onMouseLeave={() => (carouselPaused.current = false)}
-              className="flex-1 flex gap-6 overflow-x-auto scrollbar-none"
+              className="flex gap-6 overflow-x-auto scrollbar-none"
             >
               {customEmbroidery.map((item, i) => (
                 <div className="shrink-0 w-[260px] text-center" key={`${item.title}-${i}`}>
@@ -432,13 +411,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <button
-              onClick={() => scrollCarousel(1)}
-              aria-label="Next"
-              className="shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
-            >
-              <FaChevronRight />
-            </button>
           </div>
           <div className="flex justify-center">
             <Link to="/gallery" className={btnGold}>
