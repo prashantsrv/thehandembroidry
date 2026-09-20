@@ -1,0 +1,15 @@
+.about-page {
+  padding: 3rem 1.5rem;
+  max-width: 700px;
+}
+
+.about-page h1 {
+  color: #7a3b3b;
+  margin-bottom: 1.5rem;
+}
+
+.about-page p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
