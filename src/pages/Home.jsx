@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import {
   FaChevronLeft,
@@ -21,6 +21,24 @@ import customDesignImg from '../assets/regalia/custom-design.png'
 import officerCapsImg from '../assets/regalia/officer-caps.png'
 import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
 import bespokePatchesImg from '../assets/regalia/bespoke-patches.png'
+import blackButterflyImg from '../assets/carousel/black-butterfly.png'
+import dgPatch1Img from '../assets/carousel/dg-patch-1.png'
+import rrPatchImg from '../assets/carousel/rr-patch.png'
+import crownPatchImg from '../assets/carousel/crown-patch.png'
+import bullionImg from '../assets/carousel/bullion.png'
+import rlPatch1Img from '../assets/carousel/rl-patch-1.png'
+import dcPatchImg from '../assets/carousel/dc-patch.png'
+import butterflyImg from '../assets/carousel/butterfly.png'
+import lionPatchImg from '../assets/carousel/lion-patch.png'
+import hondaPatchImg from '../assets/carousel/honda-patch.png'
+import dbPatchImg from '../assets/carousel/db-patch.png'
+import dgPatch2Img from '../assets/carousel/dg-patch-2.png'
+import militaryCapsPatchImg from '../assets/carousel/military-caps-patch.png'
+import capPatch1Img from '../assets/carousel/cap-patch-1.png'
+import parisPatchImg from '../assets/carousel/paris-patch.png'
+import capPatch2Img from '../assets/carousel/cap-patch-2.png'
+import dragonPatchImg from '../assets/carousel/dragon-patch.png'
+import rlPatch2Img from '../assets/carousel/rl-patch-2.png'
 
 const ph = (w, h, text, bg = '1a2338', fg = 'd4a537') =>
   `https://placehold.co/${w}x${h}/${bg}/${fg}?text=${encodeURIComponent(text)}&font=playfair-display`
@@ -105,10 +123,24 @@ const regaliaCategories = [
 ]
 
 const customEmbroidery = [
-  { img: ph(400, 400, 'Bullion'), title: 'Bullion Hand Embroidery' },
-  { img: ph(400, 400, 'Paris Patch'), title: 'Paris Patch Hand Embroidery' },
-  { img: ph(400, 400, 'DC Patch'), title: 'DC Patch Hand Embroidery' },
-  { img: ph(400, 400, 'RL Patch'), title: 'RL Patch Hand Embroidery' },
+  { img: blackButterflyImg, title: 'Black Butterfly Hand Embroidery' },
+  { img: dgPatch1Img, title: 'DG Patch Hand Embroidery' },
+  { img: rrPatchImg, title: 'RR Patch Hand Embroidery' },
+  { img: crownPatchImg, title: 'Crown Patch Hand Embroidery' },
+  { img: bullionImg, title: 'Bullion Hand Embroidery' },
+  { img: rlPatch1Img, title: 'RL Patch Hand Embroidery' },
+  { img: dcPatchImg, title: 'DC Patch Hand Embroidery' },
+  { img: butterflyImg, title: 'Butterfly Hand Embroidery' },
+  { img: lionPatchImg, title: 'Lion Patch Hand Embroidery' },
+  { img: hondaPatchImg, title: 'Honda Patch Hand Embroidery' },
+  { img: dbPatchImg, title: 'DB Patch Hand Embroidery' },
+  { img: dgPatch2Img, title: 'DG Patch Hand Embroidery' },
+  { img: militaryCapsPatchImg, title: 'Military Caps Patch Hand Embroidery' },
+  { img: capPatch1Img, title: 'Cap Patch Hand Embroidery' },
+  { img: parisPatchImg, title: 'Paris Patch Hand Embroidery' },
+  { img: capPatch2Img, title: 'Cap Patch Hand Embroidery' },
+  { img: dragonPatchImg, title: 'Dragon Patch Hand Embroidery' },
+  { img: rlPatch2Img, title: 'RL Patch Hand Embroidery' },
 ]
 
 const milestones = [
@@ -193,6 +225,7 @@ const sectionHeading = 'text-center font-serif text-[clamp(1.6rem,2.6vw,2.2rem)]
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState('All Works')
   const carouselRef = useRef(null)
+  const carouselPaused = useRef(false)
 
   const filtered =
     activeCategory === 'All Works'
@@ -204,6 +237,20 @@ export default function Home() {
     if (!el) return
     el.scrollBy({ left: dir * 320, behavior: 'smooth' })
   }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const el = carouselRef.current
+      if (!el || carouselPaused.current) return
+      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 10
+      if (atEnd) {
+        el.scrollTo({ left: 0, behavior: 'smooth' })
+      } else {
+        el.scrollBy({ left: 296, behavior: 'smooth' })
+      }
+    }, 2800)
+    return () => clearInterval(interval)
+  }, [])
 
   return (
     <>
@@ -361,9 +408,14 @@ export default function Home() {
             >
               <FaChevronLeft />
             </button>
-            <div ref={carouselRef} className="flex-1 flex gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              {customEmbroidery.map((item) => (
-                <div className="shrink-0 w-[260px] text-center" key={item.title}>
+            <div
+              ref={carouselRef}
+              onMouseEnter={() => (carouselPaused.current = true)}
+              onMouseLeave={() => (carouselPaused.current = false)}
+              className="flex-1 flex gap-6 overflow-x-auto scroll-smooth scrollbar-none"
+            >
+              {customEmbroidery.map((item, i) => (
+                <div className="shrink-0 w-[260px] text-center" key={`${item.title}-${i}`}>
                   <img
                     src={item.img}
                     alt={item.title}
