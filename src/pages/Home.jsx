@@ -16,6 +16,7 @@ import altarclothRestoration from '../assets/portfolio/altarcloth-restoration.pn
 import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapestry.png'
 import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.png'
 import heroImg from '../assets/hero.png'
+import peacockImg from '../assets/peacock.png'
 
 const ph = (w, h, text, bg = '1a2338', fg = 'd4a537') =>
   `https://placehold.co/${w}x${h}/${bg}/${fg}?text=${encodeURIComponent(text)}&font=playfair-display`
@@ -284,7 +285,7 @@ export default function Home() {
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
           <img
-            src={ph(700, 700, 'Peacock Embroidery', '0a0f1a', '2fae6b')}
+            src={peacockImg}
             alt="Peacock hand-embroidered elegance"
             className="w-full aspect-square object-cover rounded border border-gold/20"
           />
