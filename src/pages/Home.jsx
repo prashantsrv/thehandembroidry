@@ -239,17 +239,24 @@ export default function Home() {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    let frameId
+    const pxPerFrame = 0.6
+
+    function tick() {
       const el = carouselRef.current
-      if (!el || carouselPaused.current) return
-      const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 10
-      if (atEnd) {
-        el.scrollTo({ left: 0, behavior: 'smooth' })
-      } else {
-        el.scrollBy({ left: 296, behavior: 'smooth' })
+      if (el && !carouselPaused.current) {
+        const maxScroll = el.scrollWidth - el.clientWidth
+        if (el.scrollLeft >= maxScroll - 1) {
+          el.scrollLeft = 0
+        } else {
+          el.scrollLeft += pxPerFrame
+        }
       }
-    }, 2800)
-    return () => clearInterval(interval)
+      frameId = requestAnimationFrame(tick)
+    }
+
+    frameId = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(frameId)
   }, [])
 
   return (
@@ -412,7 +419,7 @@ export default function Home() {
               ref={carouselRef}
               onMouseEnter={() => (carouselPaused.current = true)}
               onMouseLeave={() => (carouselPaused.current = false)}
-              className="flex-1 flex gap-6 overflow-x-auto scroll-smooth scrollbar-none"
+              className="flex-1 flex gap-6 overflow-x-auto scrollbar-none"
             >
               {customEmbroidery.map((item, i) => (
                 <div className="shrink-0 w-[260px] text-center" key={`${item.title}-${i}`}>
