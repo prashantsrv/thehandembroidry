@@ -15,7 +15,7 @@ import visorCapLeaf from '../assets/portfolio/visor-cap-leaf.png'
 import altarclothRestoration from '../assets/portfolio/altarcloth-restoration.png'
 import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapestry.png'
 import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.png'
-import './Home.css'
+import heroImg from '../assets/hero.png'
 
 const ph = (w, h, text, bg = '1a2338', fg = 'd4a537') =>
   `https://placehold.co/${w}x${h}/${bg}/${fg}?text=${encodeURIComponent(text)}&font=playfair-display`
@@ -177,6 +177,14 @@ const requirements = [
   'Deadline + shipping location',
 ]
 
+const btnGold =
+  'inline-flex items-center gap-2 rounded px-7 py-3.5 text-[13px] font-bold uppercase tracking-wider text-[#1a1305] bg-gold hover:bg-gold-light transition-colors whitespace-nowrap'
+const btnOutline =
+  'inline-flex items-center gap-2 rounded px-7 py-3.5 text-[13px] font-bold uppercase tracking-wider text-gold border border-gold hover:bg-gold/10 transition-colors whitespace-nowrap'
+const cardOutline = 'border border-gold/35 rounded'
+const eyebrow = 'flex items-center gap-3 text-gold text-xs font-semibold uppercase tracking-[0.12em] mb-3'
+const sectionHeading = 'text-center font-serif text-[clamp(1.6rem,2.6vw,2.2rem)] text-cream mb-3'
+
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState('All Works')
   const carouselRef = useRef(null)
@@ -200,23 +208,28 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="hero">
-        <div className="container hero-inner">
-          <div className="hero-copy">
-            <h1>
-              Crafting Legacies in <span className="gold">Gold Bullion</span> &amp; Fine Silk
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImg})` }}
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_46%,rgba(6,6,10,0.55)_62%,rgba(6,6,10,0.12)_78%)]" />
+        <div className="relative mx-auto max-w-[1200px] px-6 flex min-h-[480px] items-center py-16 sm:min-h-[560px] sm:py-24">
+          <div className="max-w-xl">
+            <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] leading-[1.15] text-cream mb-5">
+              Crafting Legacies in <span className="text-gold">Gold Bullion</span> &amp; Fine Silk
             </h1>
-            <p>
+            <p className="text-[1.02rem] leading-relaxed text-muted max-w-[46ch] mb-8">
               We design and manufacture elite hand-embroidered bullion badges, military
               insignia, company logos, officer caps, religious patches, and shoulder
               boards for luxury fashion houses — engineered to precise regulations,
               detailed with timeless mastery.
             </p>
-            <div className="hero-actions">
-              <Link to="/contact" className="btn btn-gold">
+            <div className="flex flex-wrap gap-4">
+              <Link to="/contact" className={btnGold}>
                 Request Bespoke Quote
               </Link>
-              <Link to="/gallery" className="btn btn-outline">
+              <Link to="/gallery" className={btnOutline}>
                 Explore Gallery
               </Link>
             </div>
@@ -225,13 +238,17 @@ export default function Home() {
       </section>
 
       {/* Category pills */}
-      <section className="section-navy category-bar">
-        <div className="container category-pills">
+      <section className="bg-navy border-b border-gold/15 py-6">
+        <div className="mx-auto max-w-[1200px] px-6 flex flex-wrap justify-center gap-3">
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`pill ${activeCategory === cat ? 'active' : ''}`}
               onClick={() => setActiveCategory(cat)}
+              className={`rounded-full border px-4 py-2 text-xs font-semibold tracking-wide whitespace-nowrap transition-colors ${
+                activeCategory === cat
+                  ? 'bg-gold border-gold text-[#1a1305]'
+                  : 'border-gold/35 text-muted hover:border-gold hover:text-cream'
+              }`}
             >
               {cat.toUpperCase()}
             </button>
@@ -240,21 +257,23 @@ export default function Home() {
       </section>
 
       {/* Portfolio grid */}
-      <section className="section-black portfolio-section">
-        <div className="container portfolio-grid">
+      <section className="bg-ink py-16">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {filtered.map((item) => (
             <article
               key={item.title}
-              className={`portfolio-card card-outline ${item.large ? 'span-2' : ''}`}
+              className={`${cardOutline} bg-navy overflow-hidden flex flex-col col-span-1 ${
+                item.large ? 'sm:col-span-2 lg:col-span-3' : 'lg:col-span-2'
+              }`}
             >
-              <img src={item.img} alt={item.title} />
-              <div className="portfolio-card-body">
-                <p className="portfolio-category">
+              <img src={item.img} alt={item.title} className="w-full aspect-[7/5] object-cover" />
+              <div className="p-6 pt-5">
+                <p className="text-gold text-[0.72rem] font-bold tracking-wider mb-2">
                   {item.category.toUpperCase()}
-                  {item.featured && <span className="featured-dot"> &bull; FEATURED</span>}
+                  {item.featured && <span className="text-gold-light"> &bull; FEATURED</span>}
                 </p>
-                <h3>{item.title}</h3>
-                <p className="portfolio-description">{item.description}</p>
+                <h3 className="font-serif text-[1.15rem] text-cream mb-2">{item.title}</h3>
+                <p className="text-[0.88rem] leading-relaxed text-muted">{item.description}</p>
               </div>
             </article>
           ))}
@@ -262,35 +281,41 @@ export default function Home() {
       </section>
 
       {/* Peacock feature */}
-      <section className="section-black peacock-section">
-        <div className="container peacock-inner">
-          <img src={ph(700, 700, 'Peacock Embroidery', '0a0f1a', '2fae6b')} alt="Peacock hand-embroidered elegance" />
-          <div className="peacock-copy">
-            <p className="eyebrow align-left">
+      <section className="bg-ink py-18">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
+          <img
+            src={ph(700, 700, 'Peacock Embroidery', '0a0f1a', '2fae6b')}
+            alt="Peacock hand-embroidered elegance"
+            className="w-full aspect-square object-cover rounded border border-gold/20"
+          />
+          <div>
+            <p className={eyebrow}>
               <FaMedal /> The Peacock Masterpiece Series
             </p>
-            <h2>The Art of Peacock Hand-Embroidered Elegance</h2>
-            <p>
+            <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-4">
+              The Art of Peacock Hand-Embroidered Elegance
+            </h2>
+            <p className="leading-relaxed text-muted mb-7">
               A magnificent peacock brought to life through delicate hand embroidery,
               intricate golden threadwork, and vibrant detailing. Every stitch reflects
               exceptional craftsmanship, patience, and timeless artistry — transforming
               fine fabric into a luxurious masterpiece.
             </p>
-            <div className="peacock-meta">
+            <div className="grid grid-cols-1 gap-5 mb-8 pb-8 border-b border-gold/15 sm:grid-cols-3">
               <div>
-                <p className="meta-label">Client / Estate</p>
-                <p className="meta-value">The Royal Commission At Dubai</p>
+                <p className="text-gold text-[0.7rem] tracking-wider uppercase mb-1.5">Client / Estate</p>
+                <p className="text-[0.92rem] leading-tight text-cream">The Royal Commission At Dubai</p>
               </div>
               <div>
-                <p className="meta-label">Atelier Hours</p>
-                <p className="meta-value">340 Hours Hand-Stitching</p>
+                <p className="text-gold text-[0.7rem] tracking-wider uppercase mb-1.5">Atelier Hours</p>
+                <p className="text-[0.92rem] leading-tight text-cream">340 Hours Hand-Stitching</p>
               </div>
               <div>
-                <p className="meta-label">Materials Used</p>
-                <p className="meta-value">Zari Gold Wire, Real Pearls</p>
+                <p className="text-gold text-[0.7rem] tracking-wider uppercase mb-1.5">Materials Used</p>
+                <p className="text-[0.92rem] leading-tight text-cream">Zari Gold Wire, Real Pearls</p>
               </div>
             </div>
-            <Link to="/contact" className="btn btn-gold">
+            <Link to="/contact" className={btnGold}>
               Request Design
             </Link>
           </div>
@@ -298,20 +323,20 @@ export default function Home() {
       </section>
 
       {/* Custom Manufactured Regalia */}
-      <section className="section-navy regalia-section">
-        <div className="container">
-          <h2 className="section-heading">Custom Manufactured Regalia</h2>
-          <p className="section-subheading">
+      <section className="bg-navy py-18">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <h2 className={sectionHeading}>Custom Manufactured Regalia</h2>
+          <p className="text-center max-w-[60ch] mx-auto mb-10 leading-relaxed text-muted">
             Every product is meticulously crafted by hand with premium wire and fine wool
             felt, compliant with international military and institutional protocols.
           </p>
-          <div className="regalia-grid">
+          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
             {regaliaCategories.map((item) => (
-              <div className="regalia-card card-outline" key={item.title}>
-                <img src={item.img} alt={item.title} />
-                <div className="regalia-card-body">
-                  <h4>{item.title.toUpperCase()}</h4>
-                  <p>{item.description}</p>
+              <div className={`${cardOutline} bg-ink overflow-hidden`} key={item.title}>
+                <img src={item.img} alt={item.title} className="w-full aspect-square object-cover" />
+                <div className="p-5">
+                  <h4 className="text-gold text-[0.85rem] tracking-wide mb-2">{item.title.toUpperCase()}</h4>
+                  <p className="text-[0.85rem] leading-relaxed text-muted">{item.description}</p>
                 </div>
               </div>
             ))}
@@ -320,27 +345,39 @@ export default function Home() {
       </section>
 
       {/* Our Custom Embroidery carousel */}
-      <section className="section-black">
-        <div className="container carousel-section">
-          <h2 className="section-heading gold-heading">Our Custom Embroidery</h2>
-          <div className="carousel-wrap">
-            <button className="carousel-arrow left" onClick={() => scrollCarousel(-1)} aria-label="Previous">
+      <section className="bg-ink py-18">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <h2 className={`${sectionHeading} text-gold`}>Our Custom Embroidery</h2>
+          <div className="flex items-center gap-4 mb-10 mt-10">
+            <button
+              onClick={() => scrollCarousel(-1)}
+              aria-label="Previous"
+              className="flex-shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
+            >
               <FaChevronLeft />
             </button>
-            <div className="carousel-track" ref={carouselRef}>
+            <div ref={carouselRef} className="flex-1 flex gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {customEmbroidery.map((item) => (
-                <div className="carousel-card" key={item.title}>
-                  <img src={item.img} alt={item.title} />
-                  <p>{item.title}</p>
+                <div className="flex-shrink-0 w-[260px] text-center" key={item.title}>
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full aspect-square object-cover rounded border border-gold/30 mb-3.5"
+                  />
+                  <p className="text-cream font-semibold text-[0.95rem]">{item.title}</p>
                 </div>
               ))}
             </div>
-            <button className="carousel-arrow right" onClick={() => scrollCarousel(1)} aria-label="Next">
+            <button
+              onClick={() => scrollCarousel(1)}
+              aria-label="Next"
+              className="flex-shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
+            >
               <FaChevronRight />
             </button>
           </div>
-          <div className="center-btn">
-            <Link to="/gallery" className="btn btn-gold">
+          <div className="flex justify-center">
+            <Link to="/gallery" className={btnGold}>
               See All Design
             </Link>
           </div>
@@ -348,15 +385,15 @@ export default function Home() {
       </section>
 
       {/* Milestones */}
-      <section className="section-black milestones-section">
-        <div className="container">
-          <h2 className="section-heading">Meticulous Handcrafted Milestones</h2>
-          <div className="milestones-grid">
+      <section className="bg-ink py-18">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <h2 className={sectionHeading}>Meticulous Handcrafted Milestones</h2>
+          <div className="grid grid-cols-1 gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-4">
             {milestones.map((m) => (
-              <div className="milestone-card card-outline" key={m.n}>
-                <p className="milestone-number">{m.n}</p>
-                <h4>{m.title}</h4>
-                <p>{m.description}</p>
+              <div className={`${cardOutline} bg-navy p-7`} key={m.n}>
+                <p className="font-serif text-[2rem] text-gold mb-3">{m.n}</p>
+                <h4 className="text-cream text-[1rem] mb-2.5">{m.title}</h4>
+                <p className="text-[0.85rem] leading-relaxed text-muted">{m.description}</p>
               </div>
             ))}
           </div>
@@ -364,12 +401,14 @@ export default function Home() {
       </section>
 
       {/* Quality Creativity */}
-      <section className="section-navy quality-section">
-        <div className="container quality-inner">
+      <section className="bg-navy py-18">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
           <div>
-            <p className="eyebrow align-left">Our Commitment</p>
-            <h2>Quality, Creativity &amp; Attention to Detail</h2>
-            <p>
+            <p className={eyebrow}>Our Commitment</p>
+            <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-5">
+              Quality, Creativity &amp; Attention to Detail
+            </h2>
+            <p className="leading-relaxed text-muted">
               We are committed to quality, creativity, and attention to detail. Every
               project is approached with care, from selecting suitable fabrics and
               threads to completing the final finishing touches. We continuously explore
@@ -377,63 +416,87 @@ export default function Home() {
               foundations of embroidery.
             </p>
           </div>
-          <div className="quality-images">
-            <img src={ph(400, 500, 'Thread Spools')} alt="Colorful thread spools" />
-            <img src={ph(400, 500, 'Gold Wire Coils')} alt="Gold bullion wire coils" />
+          <div className="grid grid-cols-2 gap-5">
+            <img
+              src={ph(400, 500, 'Thread Spools')}
+              alt="Colorful thread spools"
+              className="w-full h-full self-end object-cover rounded border border-gold/20"
+            />
+            <img
+              src={ph(400, 500, 'Gold Wire Coils')}
+              alt="Gold bullion wire coils"
+              className="w-full h-full object-cover rounded border border-gold/20"
+            />
           </div>
         </div>
       </section>
 
       {/* Master Stitch */}
-      <section className="section-black master-section">
-        <div className="container master-inner">
+      <section className="bg-ink py-18">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
           <div>
-            <p className="eyebrow align-left">Our Heritage</p>
-            <h2>The Master Stitch</h2>
-            <p>
+            <p className={eyebrow}>Our Heritage</p>
+            <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-5">The Master Stitch</h2>
+            <p className="leading-relaxed text-muted mb-7">
               We preserve the rigorous traditional techniques of hand embroidery. Using
               pure gold and silver wire threads (bullion), we hand-layer every
               millimeter to form highly dimensional, sculptural insignias.
             </p>
-            <ol className="heritage-list">
+            <ol className="flex flex-col gap-6">
               {heritagePoints.map((point, i) => (
-                <li key={point.title}>
-                  <span className="heritage-index">{i + 1}</span>
+                <li key={point.title} className="flex gap-4">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full border border-gold text-gold font-serif font-bold flex items-center justify-center text-sm">
+                    {i + 1}
+                  </span>
                   <div>
-                    <h4>{point.title}</h4>
-                    <p>{point.description}</p>
+                    <h4 className="text-cream text-[0.95rem] mb-1">{point.title}</h4>
+                    <p className="text-[0.85rem] leading-relaxed text-muted">{point.description}</p>
                   </div>
                 </li>
               ))}
             </ol>
           </div>
-          <div className="master-images">
-            <img src={ph(340, 260, 'Hand Stitching Process')} alt="Artisan hand-stitching bullion wire" />
-            <img src={ph(340, 260, 'Beaded Neckline')} alt="Beaded embroidery neckline" />
-            <img className="master-image-wide" src={ph(700, 220, 'Embroidered Trim')} alt="Hand-embroidered fabric trim" />
+          <div className="grid grid-cols-2 gap-5">
+            <img
+              src={ph(340, 260, 'Hand Stitching Process')}
+              alt="Artisan hand-stitching bullion wire"
+              className="w-full h-full object-cover rounded border border-gold/20"
+            />
+            <img
+              src={ph(340, 260, 'Beaded Neckline')}
+              alt="Beaded embroidery neckline"
+              className="w-full h-full object-cover rounded border border-gold/20"
+            />
+            <img
+              className="col-span-2 w-full h-full object-cover rounded border border-gold/20"
+              src={ph(700, 220, 'Embroidered Trim')}
+              alt="Hand-embroidered fabric trim"
+            />
           </div>
         </div>
       </section>
 
       {/* Unrivalled standards */}
-      <section className="section-black supply-section">
-        <div className="container">
-          <h2 className="section-heading">Unrivalled Standards of Global Supply</h2>
-          <div className="supply-grid">
+      <section className="bg-ink py-18">
+        <div className="mx-auto max-w-[1200px] px-6">
+          <h2 className={sectionHeading}>Unrivalled Standards of Global Supply</h2>
+          <div className="grid grid-cols-1 gap-6 mt-10 mb-14 sm:grid-cols-3">
             {globalSupply.map((item) => (
-              <div className="supply-card card-outline" key={item.title}>
-                <div className="supply-icon">{item.icon}</div>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
+              <div className={`${cardOutline} bg-navy p-8 text-center`} key={item.title}>
+                <div className="w-14 h-14 rounded-full border border-gold text-gold text-xl flex items-center justify-center mx-auto mb-5">
+                  {item.icon}
+                </div>
+                <h4 className="text-cream text-[1.05rem] mb-3">{item.title}</h4>
+                <p className="text-[0.88rem] leading-relaxed text-muted">{item.description}</p>
               </div>
             ))}
           </div>
 
-          <div className="stats-grid">
+          <div className="grid grid-cols-2 gap-6 text-center lg:grid-cols-4">
             {stats.map((stat) => (
-              <div className="stat" key={stat.label}>
-                <p className="stat-value">{stat.value}</p>
-                <p className="stat-label">{stat.label.toUpperCase()}</p>
+              <div key={stat.label}>
+                <p className="font-serif text-[clamp(1.8rem,3vw,2.4rem)] text-gold mb-1.5">{stat.value}</p>
+                <p className="text-[0.72rem] tracking-wide text-muted">{stat.label.toUpperCase()}</p>
               </div>
             ))}
           </div>
@@ -441,42 +504,58 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="section-black cta-section">
-        <div className="container cta-inner">
-          <img className="cta-decor left" src={ph(220, 220, 'Bicycle Brooch')} alt="Decorative bullion bicycle brooch" />
-          <div className="cta-copy">
-            <h2>Looking for Something Truly Unique?</h2>
-            <p>
+      <section className="bg-ink py-18">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-8 items-center text-center lg:grid-cols-[220px_1fr_220px] lg:text-left">
+          <img
+            className="hidden lg:block w-full aspect-square object-contain opacity-90"
+            src={ph(220, 220, 'Bicycle Brooch')}
+            alt="Decorative bullion bicycle brooch"
+          />
+          <div className="text-center">
+            <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-4">
+              Looking for Something Truly Unique?
+            </h2>
+            <p className="max-w-[46ch] mx-auto mb-7 leading-relaxed text-muted">
               We collaborate closely to transform your ideas into hand-embroidered
               artwork — designed, stitched, and finished with care.
             </p>
-            <Link to="/contact" className="btn btn-gold">
+            <Link to="/contact" className={btnGold}>
               Request A Custom Design
             </Link>
           </div>
-          <img className="cta-decor right" src={ph(220, 220, 'Gold Patch')} alt="Decorative gold embroidered patch" />
+          <img
+            className="hidden lg:block w-full aspect-square object-contain opacity-90"
+            src={ph(220, 220, 'Gold Patch')}
+            alt="Decorative gold embroidered patch"
+          />
         </div>
       </section>
 
       {/* What we need */}
-      <section className="section-black requirements-section">
-        <div className="container requirements-inner">
+      <section className="bg-ink py-18 pb-14">
+        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center mb-10 lg:grid-cols-2">
           <div>
-            <h2 className="left-heading">What We Need From You</h2>
-            <p className="requirements-sub">We&apos;ll start fastest when you share:</p>
-            <ul className="requirements-list">
+            <h2 className="font-serif text-[clamp(1.6rem,2.6vw,2.2rem)] text-cream mb-2">
+              What We Need From You
+            </h2>
+            <p className="text-muted mb-6">We&apos;ll start fastest when you share:</p>
+            <ul className="flex flex-col gap-4">
               {requirements.map((req) => (
-                <li key={req}>
-                  <FaCheckCircle className="check-icon" />
+                <li key={req} className="flex items-start gap-3 text-[0.95rem] text-cream">
+                  <FaCheckCircle className="text-gold mt-0.5 flex-shrink-0" />
                   {req}
                 </li>
               ))}
             </ul>
           </div>
-          <img src={ph(500, 500, 'Reference Photo Example')} alt="Reference sizing photo example" />
+          <img
+            src={ph(500, 500, 'Reference Photo Example')}
+            alt="Reference sizing photo example"
+            className="w-full aspect-square object-cover rounded border border-gold/20"
+          />
         </div>
-        <div className="center-btn">
-          <Link to="/contact" className="btn btn-gold">
+        <div className="flex justify-center">
+          <Link to="/contact" className={btnGold}>
             Request A Custom Design
           </Link>
         </div>

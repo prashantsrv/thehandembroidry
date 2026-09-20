@@ -1,3 +1,18 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-navy: #101a2e;
+  --color-navy-light: #16223c;
+  --color-ink: #060606;
+  --color-gold: #d4a537;
+  --color-gold-light: #e8c468;
+  --color-cream: #f3ece1;
+  --color-muted: #b9b6ad;
+
+  --font-serif: 'Playfair Display', 'Georgia', serif;
+  --font-sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
 :root {
   --navy: #101a2e;
   --navy-light: #16223c;
