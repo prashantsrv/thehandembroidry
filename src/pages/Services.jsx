@@ -1,5 +1,4 @@
 import Seo from '../components/Seo'
-import './Services.css'
 
 const services = [
   {
@@ -27,15 +26,19 @@ export default function Services() {
         title="Services"
         description="Explore our range of handcrafted embroidery services — custom designs, traditional motifs, bridal wear and home decor."
       />
-      <section className="container services-page">
-        <h1>Our Services</h1>
-        <div className="services-grid">
-          {services.map((service) => (
-            <div className="service-card" key={service.title}>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+      <section className="bg-ink py-16">
+        <div className="mx-auto max-w-300 px-6">
+          <h1 className="text-center font-serif text-[clamp(1.8rem,3vw,2.4rem)] text-cream mb-10">
+            Our Services
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {services.map((service) => (
+              <div className="border border-gold/35 rounded bg-navy p-6" key={service.title}>
+                <h3 className="font-serif text-[1.1rem] text-gold mb-2">{service.title}</h3>
+                <p className="text-[0.9rem] leading-relaxed text-muted">{service.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

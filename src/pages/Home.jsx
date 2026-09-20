@@ -214,7 +214,7 @@ export default function Home() {
           style={{ backgroundImage: `url(${heroImg})` }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_46%,rgba(6,6,10,0.55)_62%,rgba(6,6,10,0.12)_78%)]" />
-        <div className="relative mx-auto max-w-[1200px] px-6 flex min-h-[480px] items-center py-16 sm:min-h-[560px] sm:py-24">
+        <div className="relative mx-auto max-w-300 px-6 flex min-h-[480px] items-center py-16 sm:min-h-[560px] sm:py-24">
           <div className="max-w-xl">
             <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] leading-[1.15] text-cream mb-5">
               Crafting Legacies in <span className="text-gold">Gold Bullion</span> &amp; Fine Silk
@@ -239,7 +239,7 @@ export default function Home() {
 
       {/* Category pills */}
       <section className="bg-navy border-b border-gold/15 py-6">
-        <div className="mx-auto max-w-[1200px] px-6 flex flex-wrap justify-center gap-3">
+        <div className="mx-auto max-w-300 px-6 flex flex-wrap justify-center gap-3">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -258,7 +258,7 @@ export default function Home() {
 
       {/* Portfolio grid */}
       <section className="bg-ink py-16">
-        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6">
           {filtered.map((item) => (
             <article
               key={item.title}
@@ -282,7 +282,7 @@ export default function Home() {
 
       {/* Peacock feature */}
       <section className="bg-ink py-18">
-        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
+        <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
           <img
             src={ph(700, 700, 'Peacock Embroidery', '0a0f1a', '2fae6b')}
             alt="Peacock hand-embroidered elegance"
@@ -324,7 +324,7 @@ export default function Home() {
 
       {/* Custom Manufactured Regalia */}
       <section className="bg-navy py-18">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-300 px-6">
           <h2 className={sectionHeading}>Custom Manufactured Regalia</h2>
           <p className="text-center max-w-[60ch] mx-auto mb-10 leading-relaxed text-muted">
             Every product is meticulously crafted by hand with premium wire and fine wool
@@ -346,19 +346,19 @@ export default function Home() {
 
       {/* Our Custom Embroidery carousel */}
       <section className="bg-ink py-18">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-300 px-6">
           <h2 className={`${sectionHeading} text-gold`}>Our Custom Embroidery</h2>
           <div className="flex items-center gap-4 mb-10 mt-10">
             <button
               onClick={() => scrollCarousel(-1)}
               aria-label="Previous"
-              className="flex-shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
+              className="shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
             >
               <FaChevronLeft />
             </button>
             <div ref={carouselRef} className="flex-1 flex gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               {customEmbroidery.map((item) => (
-                <div className="flex-shrink-0 w-[260px] text-center" key={item.title}>
+                <div className="shrink-0 w-[260px] text-center" key={item.title}>
                   <img
                     src={item.img}
                     alt={item.title}
@@ -371,7 +371,7 @@ export default function Home() {
             <button
               onClick={() => scrollCarousel(1)}
               aria-label="Next"
-              className="flex-shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
+              className="shrink-0 w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center hover:bg-gold/10"
             >
               <FaChevronRight />
             </button>
@@ -386,7 +386,7 @@ export default function Home() {
 
       {/* Milestones */}
       <section className="bg-ink py-18">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-300 px-6">
           <h2 className={sectionHeading}>Meticulous Handcrafted Milestones</h2>
           <div className="grid grid-cols-1 gap-6 mt-10 sm:grid-cols-2 lg:grid-cols-4">
             {milestones.map((m) => (
@@ -402,7 +402,7 @@ export default function Home() {
 
       {/* Quality Creativity */}
       <section className="bg-navy py-18">
-        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
+        <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
           <div>
             <p className={eyebrow}>Our Commitment</p>
             <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-5">
@@ -433,7 +433,7 @@ export default function Home() {
 
       {/* Master Stitch */}
       <section className="bg-ink py-18">
-        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
+        <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
           <div>
             <p className={eyebrow}>Our Heritage</p>
             <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-5">The Master Stitch</h2>
@@ -445,7 +445,7 @@ export default function Home() {
             <ol className="flex flex-col gap-6">
               {heritagePoints.map((point, i) => (
                 <li key={point.title} className="flex gap-4">
-                  <span className="flex-shrink-0 w-8 h-8 rounded-full border border-gold text-gold font-serif font-bold flex items-center justify-center text-sm">
+                  <span className="shrink-0 w-8 h-8 rounded-full border border-gold text-gold font-serif font-bold flex items-center justify-center text-sm">
                     {i + 1}
                   </span>
                   <div>
@@ -478,7 +478,7 @@ export default function Home() {
 
       {/* Unrivalled standards */}
       <section className="bg-ink py-18">
-        <div className="mx-auto max-w-[1200px] px-6">
+        <div className="mx-auto max-w-300 px-6">
           <h2 className={sectionHeading}>Unrivalled Standards of Global Supply</h2>
           <div className="grid grid-cols-1 gap-6 mt-10 mb-14 sm:grid-cols-3">
             {globalSupply.map((item) => (
@@ -505,7 +505,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="bg-ink py-18">
-        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-8 items-center text-center lg:grid-cols-[220px_1fr_220px] lg:text-left">
+        <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-8 items-center text-center lg:grid-cols-[220px_1fr_220px] lg:text-left">
           <img
             className="hidden lg:block w-full aspect-square object-contain opacity-90"
             src={ph(220, 220, 'Bicycle Brooch')}
@@ -533,7 +533,7 @@ export default function Home() {
 
       {/* What we need */}
       <section className="bg-ink py-18 pb-14">
-        <div className="mx-auto max-w-[1200px] px-6 grid grid-cols-1 gap-14 items-center mb-10 lg:grid-cols-2">
+        <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center mb-10 lg:grid-cols-2">
           <div>
             <h2 className="font-serif text-[clamp(1.6rem,2.6vw,2.2rem)] text-cream mb-2">
               What We Need From You
@@ -542,7 +542,7 @@ export default function Home() {
             <ul className="flex flex-col gap-4">
               {requirements.map((req) => (
                 <li key={req} className="flex items-start gap-3 text-[0.95rem] text-cream">
-                  <FaCheckCircle className="text-gold mt-0.5 flex-shrink-0" />
+                  <FaCheckCircle className="text-gold mt-0.5 shrink-0" />
                   {req}
                 </li>
               ))}
