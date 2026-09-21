@@ -52,7 +52,7 @@ export default function About() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBgImg})` }} />
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,6,10,0.55),rgba(6,6,10,0.75))]" />
-        <div className="relative mx-auto max-w-300 px-6 min-h-screen flex flex-col justify-center text-center">
+        <div className="relative mx-auto max-w-300 px-6 min-h-[calc(100vh-120px)] flex flex-col justify-center text-center">
           <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] text-cream mb-6">About Us</h1>
           <p className="leading-relaxed text-cream/90 max-w-[70ch] mx-auto mb-8">
             Welcome to The Hand Embroidery, a creative destination where traditional craftsmanship
