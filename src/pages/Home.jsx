@@ -14,6 +14,8 @@ import goldWireCoilsImg from '../assets/gold-wire-coils.png'
 import handStitchingProcessImg from '../assets/hand-stitching-process.png'
 import beadedNecklineImg from '../assets/beaded-neckline.png'
 import embroideredTrimImg from '../assets/embroidered-trim.png'
+import bicycleBroochImg from '../assets/bicycle-brooch.png'
+import goldPatchImg from '../assets/gold-patch.png'
 import customDesignImg from '../assets/regalia/custom-design.png'
 import officerCapsImg from '../assets/regalia/officer-caps.png'
 import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
@@ -549,7 +551,7 @@ export default function Home() {
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-8 items-center text-center lg:grid-cols-[220px_1fr_220px] lg:text-left">
           <img
             className="hidden lg:block w-full aspect-square object-contain opacity-90"
-            src={ph(220, 220, 'Bicycle Brooch')}
+            src={bicycleBroochImg}
             alt="Decorative bullion bicycle brooch"
           />
           <div className="text-center">
@@ -566,7 +568,7 @@ export default function Home() {
           </div>
           <img
             className="hidden lg:block w-full aspect-square object-contain opacity-90"
-            src={ph(220, 220, 'Gold Patch')}
+            src={goldPatchImg}
             alt="Decorative gold embroidered patch"
           />
         </div>
