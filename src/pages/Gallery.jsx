@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import heroLionsImg from '../assets/gallery/hero-lions.png'
 import heroJenkinsImg from '../assets/gallery/hero-jenkins.png'
+import ctaBgImg from '../assets/gallery/cta-bg.png'
 import lionChain from '../assets/gallery/grid/lion-chain.png'
 import jbMonogram from '../assets/gallery/grid/jb-monogram.png'
 import shield315 from '../assets/gallery/grid/shield-31-5.png'
@@ -135,7 +136,10 @@ export default function Gallery() {
       </section>
 
       {/* CTA */}
-      <section className="bg-ink py-18">
+      <section
+        className="bg-ink bg-cover bg-center py-18"
+        style={{ backgroundImage: `url(${ctaBgImg})` }}
+      >
         <div className="mx-auto max-w-175 px-6 text-center">
           <h2 className="font-serif text-[clamp(1.7rem,2.8vw,2.3rem)] text-cream mb-4">
             Ready to Bring Your Vision to Life?
