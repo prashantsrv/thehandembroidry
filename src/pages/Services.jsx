@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import heroBadgeImg from '../assets/services/hero-badge.png'
-import legacyCrownImg from '../assets/services/legacy-crown.png'
-import legacyBeeImg from '../assets/services/legacy-bee.png'
+import legacyCrestImg from '../assets/services/legacy-crest.png'
 import fashion1Img from '../assets/services/fashion-1.png'
 import fashion2Img from '../assets/services/fashion-2.png'
 import fashion3Img from '../assets/services/fashion-3.png'
@@ -108,16 +107,11 @@ export default function Services() {
       {/* Crafted by Hand, Trusted Worldwide */}
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-[1fr_1.3fr]">
-          <div className="grid grid-cols-2 gap-5">
+          <div className="bg-cream rounded border border-gold/20 p-6">
             <img
-              src={legacyCrownImg}
-              alt="Beaded crown hand embroidery"
-              className="w-full h-full self-end object-cover rounded border border-gold/20"
-            />
-            <img
-              src={legacyBeeImg}
-              alt="Beaded bee hand embroidery"
-              className="w-full h-full object-cover rounded border border-gold/20"
+              src={legacyCrestImg}
+              alt="Beaded crown and bee hand embroidery"
+              className="w-full h-auto object-contain"
             />
           </div>
           <div>
