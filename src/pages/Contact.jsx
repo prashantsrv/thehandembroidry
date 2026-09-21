@@ -82,7 +82,7 @@ export default function Contact() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBgImg})` }} />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,0.75)_0%,rgba(6,6,10,0.55)_42%,rgba(6,6,10,0.3)_58%,rgba(6,6,10,0.1)_75%)]" />
-        <div className="relative mx-auto max-w-300 px-6 flex min-h-90 items-center">
+        <div className="relative mx-auto max-w-300 px-6 flex aspect-1728/594 min-h-64 items-center">
           <h1 className="font-serif text-[clamp(2.4rem,4.2vw,3.6rem)] text-gold-light">Contact Us</h1>
         </div>
       </section>
