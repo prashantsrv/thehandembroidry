@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
 import heroBadgeImg from '../assets/services/hero-badge.png'
 import legacyCrestImg from '../assets/services/legacy-crest.png'
+import timelinesBgImg from '../assets/services/timelines-bg.png'
 import fashion1Img from '../assets/services/fashion-1.png'
 import fashion2Img from '../assets/services/fashion-2.png'
 import fashion3Img from '../assets/services/fashion-3.png'
@@ -199,7 +200,10 @@ export default function Services() {
       </section>
 
       {/* Timelines to Confirm */}
-      <section className="bg-ink py-18 pb-20">
+      <section
+        className="bg-ink bg-cover bg-center py-18 pb-20"
+        style={{ backgroundImage: `url(${timelinesBgImg})` }}
+      >
         <div className="mx-auto max-w-175 px-6">
           <h2 className="text-center font-serif text-[clamp(1.6rem,2.6vw,2.2rem)] text-cream mb-10">
             Timelines to Confirm
