@@ -107,7 +107,7 @@ export default function Services() {
       {/* Crafted by Hand, Trusted Worldwide */}
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-[1fr_1.3fr]">
-          <div className="bg-cream rounded border border-gold/20 p-6">
+          <div className="bg-ink rounded border border-gold/20 p-6">
             <img
               src={legacyCrestImg}
               alt="Beaded crown and bee hand embroidery"
