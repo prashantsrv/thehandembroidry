@@ -11,6 +11,9 @@ import heroImg from '../assets/hero.png'
 import peacockImg from '../assets/peacock.png'
 import threadSpoolsImg from '../assets/thread-spools.png'
 import goldWireCoilsImg from '../assets/gold-wire-coils.png'
+import handStitchingProcessImg from '../assets/hand-stitching-process.png'
+import beadedNecklineImg from '../assets/beaded-neckline.png'
+import embroideredTrimImg from '../assets/embroidered-trim.png'
 import customDesignImg from '../assets/regalia/custom-design.png'
 import officerCapsImg from '../assets/regalia/officer-caps.png'
 import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
@@ -496,18 +499,18 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-5">
             <img
-              src={ph(340, 260, 'Hand Stitching Process')}
+              src={handStitchingProcessImg}
               alt="Artisan hand-stitching bullion wire"
               className="w-full h-full object-cover rounded border border-gold/20"
             />
             <img
-              src={ph(340, 260, 'Beaded Neckline')}
+              src={beadedNecklineImg}
               alt="Beaded embroidery neckline"
               className="w-full h-full object-cover rounded border border-gold/20"
             />
             <img
               className="col-span-2 w-full h-full object-cover rounded border border-gold/20"
-              src={ph(700, 220, 'Embroidered Trim')}
+              src={embroideredTrimImg}
               alt="Hand-embroidered fabric trim"
             />
           </div>
