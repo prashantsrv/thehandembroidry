@@ -16,6 +16,7 @@ import beadedNecklineImg from '../assets/beaded-neckline.png'
 import embroideredTrimImg from '../assets/embroidered-trim.png'
 import bicycleBroochImg from '../assets/bicycle-brooch.png'
 import goldPatchImg from '../assets/gold-patch.png'
+import referencePhotoExampleImg from '../assets/reference-photo-example.png'
 import customDesignImg from '../assets/regalia/custom-design.png'
 import officerCapsImg from '../assets/regalia/officer-caps.png'
 import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
@@ -38,9 +39,6 @@ import parisPatchImg from '../assets/carousel/paris-patch.png'
 import capPatch2Img from '../assets/carousel/cap-patch-2.png'
 import dragonPatchImg from '../assets/carousel/dragon-patch.png'
 import rlPatch2Img from '../assets/carousel/rl-patch-2.png'
-
-const ph = (w, h, text, bg = '1a2338', fg = 'd4a537') =>
-  `https://placehold.co/${w}x${h}/${bg}/${fg}?text=${encodeURIComponent(text)}&font=playfair-display`
 
 const categories = [
   'All Works',
@@ -266,7 +264,7 @@ export default function Home() {
           style={{ backgroundImage: `url(${heroImg})` }}
         />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_46%,rgba(6,6,10,0.55)_62%,rgba(6,6,10,0.12)_78%)]" />
-        <div className="relative mx-auto max-w-300 px-6 flex min-h-[480px] items-center py-16 sm:min-h-[560px] sm:py-24">
+        <div className="relative mx-auto max-w-300 px-6 flex min-h-120 items-center py-16 sm:min-h-140 sm:py-24">
           <div className="max-w-xl">
             <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] leading-[1.15] text-cream mb-5">
               Crafting Legacies in <span className="text-gold">Gold Bullion</span> &amp; Fine Silk
@@ -318,7 +316,7 @@ export default function Home() {
                 item.large ? 'sm:col-span-2 lg:col-span-3' : 'lg:col-span-2'
               }`}
             >
-              <img src={item.img} alt={item.title} className="w-full aspect-[7/5] object-cover" />
+              <img src={item.img} alt={item.title} className="w-full aspect-7/5 object-cover" />
               <div className="p-6 pt-5">
                 <p className="text-gold text-[0.72rem] font-bold tracking-wider mb-2">
                   {item.category.toUpperCase()}
@@ -408,7 +406,7 @@ export default function Home() {
               className="flex gap-6 overflow-x-auto scrollbar-none"
             >
               {customEmbroidery.map((item, i) => (
-                <div className="shrink-0 w-[260px] text-center" key={`${item.title}-${i}`}>
+                <div className="shrink-0 w-65 text-center" key={`${item.title}-${i}`}>
                   <img
                     src={item.img}
                     alt={item.title}
@@ -592,7 +590,7 @@ export default function Home() {
             </ul>
           </div>
           <img
-            src={ph(500, 500, 'Reference Photo Example')}
+            src={referencePhotoExampleImg}
             alt="Reference sizing photo example"
             className="w-full aspect-square object-cover rounded border border-gold/20"
           />
