@@ -3,7 +3,7 @@
 export const siteConfig = {
   brandName: 'The Hand Embroidery',
   tagline: 'Crafting Legacies in Gold Bullion & Fine Silk',
-  domain: 'https://thehandembroidry.com',
+  domain: 'https://thehandembroidery.com',
 
   // Web3Forms se free access key lo: https://web3forms.com  (email pe form ka data yahi bhejta hai)
   web3formsAccessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
