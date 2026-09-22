@@ -38,16 +38,18 @@ main {
   flex: 1;
 }
 
-h1,
-h2,
-h3 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  margin: 0;
-}
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    margin: 0;
+  }
 
-p {
-  margin: 0;
+  p {
+    margin: 0;
+  }
 }
 
 a {
