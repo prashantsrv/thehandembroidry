@@ -79,7 +79,7 @@ export default function Contact() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden aspect-1728/594 min-h-64">
+      <section className="relative w-full overflow-hidden aspect-1728/594 min-h-64">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBgImg})` }} />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,0.75)_0%,rgba(6,6,10,0.55)_42%,rgba(6,6,10,0.3)_58%,rgba(6,6,10,0.1)_75%)]" />
         <div className="relative mx-auto max-w-300 px-6 h-full flex items-center">
