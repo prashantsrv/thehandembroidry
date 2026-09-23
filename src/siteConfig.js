@@ -6,7 +6,7 @@ export const siteConfig = {
   domain: 'https://thehandembroidery.com',
 
   // Web3Forms se free access key lo: https://web3forms.com  (email pe form ka data yahi bhejta hai)
-  web3formsAccessKey: 'YOUR_WEB3FORMS_ACCESS_KEY',
+  web3formsAccessKey: 'c5840b30-c255-4be0-8fa1-46af997462a1',
 
   // Country code ke saath, bina + ya spaces ke. Example: '919876543210'
   whatsappNumber: '918810561006',
