@@ -263,7 +263,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImg})` }}
         />
-        <div className="absolute inset-0 bg-[rgba(6,6,10,0.97)] sm:bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_46%,rgba(6,6,10,0.55)_62%,rgba(6,6,10,0.12)_78%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,6,10,0.97),rgba(6,6,10,0.97))] sm:bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_42%,rgba(6,6,10,0.15)_55%,rgba(6,6,10,0)_65%)]" />
         <div className="relative mx-auto max-w-300 px-6 flex min-h-120 items-center py-16 sm:min-h-140 sm:py-24">
           <div className="max-w-xl">
             <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] leading-[1.15] text-cream mb-5">
