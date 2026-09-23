@@ -380,7 +380,7 @@ export default function Home() {
             Every product is meticulously crafted by hand with premium wire and fine wool
             felt, compliant with international military and institutional protocols.
           </p>
-          <div className="grid grid-cols-2 gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {regaliaCategories.map((item) => (
               <div className={`${cardOutline} bg-ink overflow-hidden`} key={item.title}>
                 <img src={item.img} alt={item.title} className="w-full aspect-square object-cover" />
