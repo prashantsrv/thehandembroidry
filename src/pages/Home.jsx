@@ -548,7 +548,7 @@ export default function Home() {
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-8 items-center text-center lg:grid-cols-[220px_1fr_220px] lg:text-left">
           <img
-            className="hidden lg:block w-full aspect-square object-contain opacity-90"
+            className="w-32 mx-auto aspect-square object-contain opacity-90 lg:w-full"
             src={bicycleBroochImg}
             alt="Decorative bullion bicycle brooch"
           />
@@ -565,7 +565,7 @@ export default function Home() {
             </Link>
           </div>
           <img
-            className="hidden lg:block w-full aspect-square object-contain opacity-90"
+            className="w-32 mx-auto aspect-square object-contain opacity-90 lg:w-full"
             src={goldPatchImg}
             alt="Decorative gold embroidered patch"
           />
