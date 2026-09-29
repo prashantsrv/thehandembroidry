@@ -98,6 +98,7 @@ export default function Contact() {
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <input type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <input type="text" name="name" placeholder="Your Name *" required className={inputClass} />
               <input type="email" name="email" placeholder="Email Address *" required className={inputClass} />
