@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import {
-  FaWhatsapp,
   FaPaperPlane,
   FaMapMarkerAlt,
   FaClock,
@@ -163,17 +162,6 @@ export default function Contact() {
                 <p className="text-muted text-sm">www.thehandembroidery.com</p>
               </div>
             </div>
-          </div>
-
-          <div className="flex justify-center mt-10">
-            <a
-              className="inline-flex items-center gap-2 bg-[#25d366] text-white px-5 py-2.5 rounded font-semibold no-underline"
-              href={`https://wa.me/${siteConfig.whatsappNumber}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <FaWhatsapp /> Chat on WhatsApp
-            </a>
           </div>
         </div>
       </section>
