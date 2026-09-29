@@ -12,7 +12,7 @@ export const siteConfig = {
   whatsappNumber: '918810561006',
 
   contactEmail: 'contact@thehandembroidery.com',
-  phoneNumbers: ['+91 8810561006', '+91 7982739599'],
+  phoneNumbers: ['+91 8810561006'],
   address: 'Jawahar Nagar, Ghaziabad, Uttar Pradesh, 201102, India',
 
   social: {
