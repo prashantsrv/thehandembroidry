@@ -8,6 +8,10 @@ import altarclothRestoration from '../assets/portfolio/altarcloth-restoration.pn
 import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapestry.png'
 import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.png'
 import heroImg from '../assets/hero.png'
+import phoenixShieldImg from '../assets/hero-badges/phoenix-shield.png'
+import leopardPatchImg from '../assets/hero-badges/leopard-patch.png'
+import officerCapImg from '../assets/hero-badges/officer-cap.png'
+import crestShieldImg from '../assets/hero-badges/crest-shield.png'
 import peacockImg from '../assets/peacock.png'
 import threadSpoolsImg from '../assets/thread-spools.png'
 import goldWireCoilsImg from '../assets/gold-wire-coils.png'
@@ -258,13 +262,13 @@ export default function Home() {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-ink">
         <div
-          className="absolute inset-0 bg-cover bg-right"
+          className="hidden lg:block absolute inset-0 bg-cover bg-right"
           style={{ backgroundImage: `url(${heroImg})` }}
         />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_38%,rgba(6,6,10,0.4)_55%,rgba(6,6,10,0)_72%)]" />
-        <div className="relative mx-auto max-w-300 px-6 flex min-h-120 items-center py-16 sm:min-h-140 sm:py-24">
+        <div className="hidden lg:block absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,1)_0%,rgba(6,6,10,1)_38%,rgba(6,6,10,0.4)_55%,rgba(6,6,10,0)_72%)]" />
+        <div className="relative mx-auto max-w-300 px-6 py-16 lg:flex lg:min-h-140 lg:items-center lg:py-24">
           <div className="max-w-xl">
             <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] leading-[1.15] text-cream mb-5">
               Crafting Legacies in <span className="text-gold">Gold Bullion</span> &amp; Fine Silk
@@ -283,6 +287,29 @@ export default function Home() {
                 Explore Gallery
               </Link>
             </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 mt-10 max-w-sm mx-auto lg:hidden">
+            <img
+              src={phoenixShieldImg}
+              alt="Hand-embroidered phoenix shield badge"
+              className="w-full aspect-square object-cover rounded border border-gold/20"
+            />
+            <img
+              src={leopardPatchImg}
+              alt="Hand-embroidered leopard patch"
+              className="w-full aspect-square object-cover rounded border border-gold/20"
+            />
+            <img
+              src={officerCapImg}
+              alt="Ceremonial officer cap with gold leaf embroidery"
+              className="w-full aspect-square object-cover rounded border border-gold/20"
+            />
+            <img
+              src={crestShieldImg}
+              alt="Royal crest hand-embroidered patch"
+              className="w-full aspect-square object-cover rounded border border-gold/20"
+            />
           </div>
         </div>
       </section>
