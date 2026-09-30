@@ -14,7 +14,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <header className="bg-navy border-b border-gold/15 sticky top-0 z-10">
+    <header className="bg-navy border-b border-gold/15 sticky top-0 z-30">
       <div className="mx-auto max-w-300 px-6 py-4 flex items-center justify-between gap-6">
         <NavLink to="/" className="flex items-center gap-3 no-underline">
           <img src={logo} alt={siteConfig.brandName} className="w-11 h-11 object-contain shrink-0" />
