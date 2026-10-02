@@ -100,7 +100,7 @@ export default function Services() {
           <img
             src={heroBadgeImg}
             alt="Custom bullion badge hand-embroidered on jacket"
-            className="w-full aspect-square object-cover rounded border border-gold/20"
+            className="relative top-4 mx-auto w-full aspect-1056/907 object-cover rounded border border-gold/20"
           />
         </div>
       </section>
@@ -165,14 +165,14 @@ export default function Services() {
 
       {/* Fashion Dress */}
       <section className="bg-navy py-18">
-        <div className="mx-auto max-w-300 px-6">
+        <div className="mx-auto max-w-250 px-6">
           <h2 className="text-center font-serif text-[clamp(1.6rem,2.6vw,2.2rem)] text-cream tracking-wide mb-10">
             Fashion Dress
           </h2>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-6 mx-auto max-w-sm sm:max-w-none sm:grid-cols-3">
             {fashionDress.map((item, i) => (
               <div className={`${cardOutline} bg-ink overflow-hidden`} key={i}>
-                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-4/3 object-cover" />
+                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-4/5 object-cover" />
                 <div className="p-5">
                   <h4 className="text-gold text-[0.8rem] tracking-wide mb-2">{item.title.toUpperCase()}</h4>
                   <p className="text-[0.85rem] leading-relaxed text-muted">{item.description}</p>

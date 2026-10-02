@@ -51,7 +51,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBgImg})` }} />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,6,10,0.55),rgba(6,6,10,0.75))]" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,6,10,0.15),rgba(6,6,10,0.4))]" />
         <div className="relative mx-auto max-w-300 px-6 min-h-[calc(100vh-120px)] flex flex-col items-center justify-center text-center">
           <h1 className="font-serif text-[clamp(2.2rem,3.6vw,3.2rem)] text-cream mb-6">About Us</h1>
           <p className="leading-relaxed text-cream/90 max-w-[70ch] mb-12">
@@ -90,7 +90,7 @@ export default function About() {
           <img loading="lazy"
             src={storytellingImg}
             alt="Artisan examining gold embroidery with a magnifying glass"
-            className="w-full aspect-4/3 object-cover rounded border border-gold/20"
+            className="w-full aspect-3/2 object-cover"
           />
         </div>
       </section>
