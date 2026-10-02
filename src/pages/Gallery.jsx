@@ -97,7 +97,7 @@ export default function Gallery() {
           <img
             src={heroLionsImg}
             alt="Lions International hand-embroidered badge"
-            className="w-40 mx-auto aspect-square object-cover rounded border border-gold/20 lg:w-full"
+            className="w-40 mx-auto aspect-square object-contain lg:w-full"
           />
           <div className="text-center">
             <h1 className="font-serif text-[clamp(2rem,3.4vw,2.8rem)] leading-[1.15] text-cream mb-5">
@@ -114,7 +114,7 @@ export default function Gallery() {
           <img
             src={heroJenkinsImg}
             alt="Jenkins Cup champion hand-embroidered badge"
-            className="w-40 mx-auto aspect-square object-cover rounded border border-gold/20 lg:w-full"
+            className="w-40 mx-auto aspect-square object-contain lg:w-full"
           />
         </div>
       </section>
