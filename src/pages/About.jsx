@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 import { FaPalette, FaScroll, FaShippingFast, FaGem } from 'react-icons/fa'
 import Seo from '../components/Seo'
 import { siteConfig } from '../siteConfig'
-import heroBgImg from '../assets/about/hero-bg.png'
-import storytellingImg from '../assets/about/storytelling.png'
-import floralMonogramImg from '../assets/about/floral-monogram.png'
-import peacockFramedImg from '../assets/about/peacock-framed.png'
+import heroBgImg from '../assets/about/hero-bg.webp'
+import storytellingImg from '../assets/about/storytelling.webp'
+import floralMonogramImg from '../assets/about/floral-monogram.webp'
+import peacockFramedImg from '../assets/about/peacock-framed.webp'
 
 const differentiators = [
   {
@@ -87,7 +87,7 @@ export default function About() {
             </p>
             <p className="italic text-gold-light text-sm">— Crafted Stitch by Passion Stitch</p>
           </div>
-          <img
+          <img loading="lazy"
             src={storytellingImg}
             alt="Artisan examining gold embroidery with a magnifying glass"
             className="w-full aspect-4/3 object-cover rounded border border-gold/20"
@@ -98,7 +98,7 @@ export default function About() {
       {/* The Special Character of Handmade */}
       <section className="bg-navy py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
-          <img
+          <img loading="lazy"
             src={floralMonogramImg}
             alt="Colorful floral hand embroidery with a gold monogram"
             className="w-full aspect-4/3 object-cover rounded border border-gold/20"
@@ -207,7 +207,7 @@ export default function About() {
       {/* Our Sacred Mission */}
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
-          <img
+          <img loading="lazy"
             src={peacockFramedImg}
             alt="Framed gold peacock hand embroidery on red velvet"
             className="w-full aspect-4/5 object-cover rounded border border-gold/20"

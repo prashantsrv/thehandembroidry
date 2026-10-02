@@ -11,7 +11,7 @@ import {
 } from 'react-icons/fa'
 import Seo from '../components/Seo'
 import { siteConfig } from '../siteConfig'
-import heroBgImg from '../assets/contact/hero-bg.png'
+import heroBgImg from '../assets/contact/hero-bg.webp'
 
 const inputClass =
   'font-[inherit] w-full px-4 py-3 rounded border border-gold/30 bg-navy text-cream placeholder:text-muted focus:outline-none focus:border-gold'

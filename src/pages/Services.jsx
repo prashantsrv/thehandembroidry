@@ -1,27 +1,27 @@
 import { Link } from 'react-router-dom'
 import Seo from '../components/Seo'
-import heroBadgeImg from '../assets/services/hero-badge.png'
-import legacyCrestImg from '../assets/services/legacy-crest.png'
-import timelinesBgImg from '../assets/services/timelines-bg.png'
-import fashion1Img from '../assets/services/fashion-1.png'
-import fashion2Img from '../assets/services/fashion-2.png'
-import fashion3Img from '../assets/services/fashion-3.png'
-import honeyFitzImg from '../assets/services/gallery/honey-fitz.png'
-import coutureBridalImg from '../assets/services/gallery/couture-bridal.png'
-import butterflyHangingImg from '../assets/services/gallery/butterfly-hanging.png'
-import lion1Img from '../assets/services/gallery/lion-1.png'
-import peacockImg from '../assets/services/gallery/peacock.png'
-import owlBridalImg from '../assets/services/gallery/owl-bridal.png'
-import crownCapImg from '../assets/services/gallery/crown-cap.png'
-import letterImg from '../assets/services/gallery/letter.png'
-import potentia1Img from '../assets/services/gallery/potentia-1.png'
-import crown1Img from '../assets/services/gallery/crown-1.png'
-import butterfly1Img from '../assets/services/gallery/butterfly-1.png'
-import lion2Img from '../assets/services/gallery/lion-2.png'
-import potentia2Img from '../assets/services/gallery/potentia-2.png'
-import crown2Img from '../assets/services/gallery/crown-2.png'
-import butterfly2Img from '../assets/services/gallery/butterfly-2.png'
-import lion3Img from '../assets/services/gallery/lion-3.png'
+import heroBadgeImg from '../assets/services/hero-badge.webp'
+import legacyCrestImg from '../assets/services/legacy-crest.webp'
+import timelinesBgImg from '../assets/services/timelines-bg.webp'
+import fashion1Img from '../assets/services/fashion-1.webp'
+import fashion2Img from '../assets/services/fashion-2.webp'
+import fashion3Img from '../assets/services/fashion-3.webp'
+import honeyFitzImg from '../assets/services/gallery/honey-fitz.webp'
+import coutureBridalImg from '../assets/services/gallery/couture-bridal.webp'
+import butterflyHangingImg from '../assets/services/gallery/butterfly-hanging.webp'
+import lion1Img from '../assets/services/gallery/lion-1.webp'
+import peacockImg from '../assets/services/gallery/peacock.webp'
+import owlBridalImg from '../assets/services/gallery/owl-bridal.webp'
+import crownCapImg from '../assets/services/gallery/crown-cap.webp'
+import letterImg from '../assets/services/gallery/letter.webp'
+import potentia1Img from '../assets/services/gallery/potentia-1.webp'
+import crown1Img from '../assets/services/gallery/crown-1.webp'
+import butterfly1Img from '../assets/services/gallery/butterfly-1.webp'
+import lion2Img from '../assets/services/gallery/lion-2.webp'
+import potentia2Img from '../assets/services/gallery/potentia-2.webp'
+import crown2Img from '../assets/services/gallery/crown-2.webp'
+import butterfly2Img from '../assets/services/gallery/butterfly-2.webp'
+import lion3Img from '../assets/services/gallery/lion-3.webp'
 
 const gallery = [
   { img: honeyFitzImg, title: 'Honey Fitz Hand Embroidery' },
@@ -109,7 +109,7 @@ export default function Services() {
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-[1fr_1.3fr]">
           <div className="bg-ink rounded border border-gold/20 p-6">
-            <img
+            <img loading="lazy"
               src={legacyCrestImg}
               alt="Beaded crown and bee hand embroidery"
               className="w-full h-auto object-contain"
@@ -148,7 +148,7 @@ export default function Services() {
           <div className="grid grid-cols-2 gap-6 mt-10 mb-10 sm:grid-cols-4">
             {gallery.map((item, i) => (
               <div className={`${cardOutline} bg-navy overflow-hidden`} key={`${item.title}-${i}`}>
-                <img src={item.img} alt={item.title} className="w-full aspect-square object-cover" />
+                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-square object-cover" />
                 <p className="text-cream text-center text-[0.85rem] font-semibold py-3 px-2">
                   {item.title}
                 </p>
@@ -172,7 +172,7 @@ export default function Services() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
             {fashionDress.map((item, i) => (
               <div className={`${cardOutline} bg-ink overflow-hidden`} key={i}>
-                <img src={item.img} alt={item.title} className="w-full aspect-4/3 object-cover" />
+                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-4/3 object-cover" />
                 <div className="p-5">
                   <h4 className="text-gold text-[0.8rem] tracking-wide mb-2">{item.title.toUpperCase()}</h4>
                   <p className="text-[0.85rem] leading-relaxed text-muted">{item.description}</p>

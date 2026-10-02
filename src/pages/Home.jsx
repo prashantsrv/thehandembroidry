@@ -2,47 +2,47 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaMedal, FaPencilAlt, FaTruck, FaHashtag, FaCheckCircle } from 'react-icons/fa'
 import Seo from '../components/Seo'
-import sovereignSealBadge from '../assets/portfolio/sovereign-seal-badge.png'
-import visorCapLeaf from '../assets/portfolio/visor-cap-leaf.png'
-import altarclothRestoration from '../assets/portfolio/altarcloth-restoration.png'
-import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapestry.png'
-import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.png'
-import heroImg from '../assets/hero.png'
-import phoenixShieldImg from '../assets/hero-badges/phoenix-shield.png'
-import leopardPatchImg from '../assets/hero-badges/leopard-patch.png'
-import officerCapImg from '../assets/hero-badges/officer-cap.png'
-import crestShieldImg from '../assets/hero-badges/crest-shield.png'
-import peacockImg from '../assets/peacock.png'
-import threadSpoolsImg from '../assets/thread-spools.png'
-import goldWireCoilsImg from '../assets/gold-wire-coils.png'
-import handStitchingProcessImg from '../assets/hand-stitching-process.png'
-import beadedNecklineImg from '../assets/beaded-neckline.png'
-import embroideredTrimImg from '../assets/embroidered-trim.png'
-import bicycleBroochImg from '../assets/bicycle-brooch.png'
-import goldPatchImg from '../assets/gold-patch.png'
-import referencePhotoExampleImg from '../assets/reference-photo-example.png'
-import customDesignImg from '../assets/regalia/custom-design.png'
-import officerCapsImg from '../assets/regalia/officer-caps.png'
-import shoulderBoardsImg from '../assets/regalia/shoulder-boards.png'
-import bespokePatchesImg from '../assets/regalia/bespoke-patches.png'
-import blackButterflyImg from '../assets/carousel/black-butterfly.png'
-import dgPatch1Img from '../assets/carousel/dg-patch-1.png'
-import rrPatchImg from '../assets/carousel/rr-patch.png'
-import crownPatchImg from '../assets/carousel/crown-patch.png'
-import bullionImg from '../assets/carousel/bullion.png'
-import rlPatch1Img from '../assets/carousel/rl-patch-1.png'
-import dcPatchImg from '../assets/carousel/dc-patch.png'
-import butterflyImg from '../assets/carousel/butterfly.png'
-import lionPatchImg from '../assets/carousel/lion-patch.png'
-import hondaPatchImg from '../assets/carousel/honda-patch.png'
-import dbPatchImg from '../assets/carousel/db-patch.png'
-import dgPatch2Img from '../assets/carousel/dg-patch-2.png'
-import militaryCapsPatchImg from '../assets/carousel/military-caps-patch.png'
-import capPatch1Img from '../assets/carousel/cap-patch-1.png'
-import parisPatchImg from '../assets/carousel/paris-patch.png'
-import capPatch2Img from '../assets/carousel/cap-patch-2.png'
-import dragonPatchImg from '../assets/carousel/dragon-patch.png'
-import rlPatch2Img from '../assets/carousel/rl-patch-2.png'
+import sovereignSealBadge from '../assets/portfolio/sovereign-seal-badge.webp'
+import visorCapLeaf from '../assets/portfolio/visor-cap-leaf.webp'
+import altarclothRestoration from '../assets/portfolio/altarcloth-restoration.webp'
+import baronialLibraryTapestry from '../assets/portfolio/baronial-library-tapestry.webp'
+import admiralShoulderEpaulettes from '../assets/portfolio/admiral-shoulder-epaulettes.webp'
+import heroImg from '../assets/hero.webp'
+import phoenixShieldImg from '../assets/hero-badges/phoenix-shield.webp'
+import leopardPatchImg from '../assets/hero-badges/leopard-patch.webp'
+import officerCapImg from '../assets/hero-badges/officer-cap.webp'
+import crestShieldImg from '../assets/hero-badges/crest-shield.webp'
+import peacockImg from '../assets/peacock.webp'
+import threadSpoolsImg from '../assets/thread-spools.webp'
+import goldWireCoilsImg from '../assets/gold-wire-coils.webp'
+import handStitchingProcessImg from '../assets/hand-stitching-process.webp'
+import beadedNecklineImg from '../assets/beaded-neckline.webp'
+import embroideredTrimImg from '../assets/embroidered-trim.webp'
+import bicycleBroochImg from '../assets/bicycle-brooch.webp'
+import goldPatchImg from '../assets/gold-patch.webp'
+import referencePhotoExampleImg from '../assets/reference-photo-example.webp'
+import customDesignImg from '../assets/regalia/custom-design.webp'
+import officerCapsImg from '../assets/regalia/officer-caps.webp'
+import shoulderBoardsImg from '../assets/regalia/shoulder-boards.webp'
+import bespokePatchesImg from '../assets/regalia/bespoke-patches.webp'
+import blackButterflyImg from '../assets/carousel/black-butterfly.webp'
+import dgPatch1Img from '../assets/carousel/dg-patch-1.webp'
+import rrPatchImg from '../assets/carousel/rr-patch.webp'
+import crownPatchImg from '../assets/carousel/crown-patch.webp'
+import bullionImg from '../assets/carousel/bullion.webp'
+import rlPatch1Img from '../assets/carousel/rl-patch-1.webp'
+import dcPatchImg from '../assets/carousel/dc-patch.webp'
+import butterflyImg from '../assets/carousel/butterfly.webp'
+import lionPatchImg from '../assets/carousel/lion-patch.webp'
+import hondaPatchImg from '../assets/carousel/honda-patch.webp'
+import dbPatchImg from '../assets/carousel/db-patch.webp'
+import dgPatch2Img from '../assets/carousel/dg-patch-2.webp'
+import militaryCapsPatchImg from '../assets/carousel/military-caps-patch.webp'
+import capPatch1Img from '../assets/carousel/cap-patch-1.webp'
+import parisPatchImg from '../assets/carousel/paris-patch.webp'
+import capPatch2Img from '../assets/carousel/cap-patch-2.webp'
+import dragonPatchImg from '../assets/carousel/dragon-patch.webp'
+import rlPatch2Img from '../assets/carousel/rl-patch-2.webp'
 
 const categories = [
   'All Works',
@@ -343,7 +343,7 @@ export default function Home() {
                 item.large ? 'sm:col-span-2 lg:col-span-3' : 'lg:col-span-2'
               }`}
             >
-              <img src={item.img} alt={item.title} className="w-full aspect-7/5 object-cover" />
+              <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-7/5 object-cover" />
               <div className="p-6 pt-5">
                 <p className="text-gold text-[0.72rem] font-bold tracking-wider mb-2">
                   {item.category.toUpperCase()}
@@ -360,7 +360,7 @@ export default function Home() {
       {/* Peacock feature */}
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-14 items-center lg:grid-cols-2">
-          <img
+          <img loading="lazy"
             src={peacockImg}
             alt="Peacock hand-embroidered elegance"
             className="w-full aspect-square object-cover rounded border border-gold/20"
@@ -410,7 +410,7 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {regaliaCategories.map((item) => (
               <div className={`${cardOutline} bg-ink overflow-hidden`} key={item.title}>
-                <img src={item.img} alt={item.title} className="w-full aspect-square object-cover" />
+                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-square object-cover" />
                 <div className="p-5">
                   <h4 className="text-gold text-[0.85rem] tracking-wide mb-2">{item.title.toUpperCase()}</h4>
                   <p className="text-[0.85rem] leading-relaxed text-muted">{item.description}</p>
@@ -434,7 +434,7 @@ export default function Home() {
             >
               {customEmbroidery.map((item, i) => (
                 <div className="shrink-0 w-65 text-center" key={`${item.title}-${i}`}>
-                  <img
+                  <img loading="lazy"
                     src={item.img}
                     alt={item.title}
                     className="w-full aspect-square object-cover rounded border border-gold/30 mb-3.5"
@@ -485,12 +485,12 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-2 gap-5">
-            <img
+            <img loading="lazy"
               src={threadSpoolsImg}
               alt="Colorful thread spools"
               className="w-full h-full self-end object-cover rounded border border-gold/20"
             />
-            <img
+            <img loading="lazy"
               src={goldWireCoilsImg}
               alt="Gold bullion wire coils"
               className="w-full h-full object-cover rounded border border-gold/20"
@@ -525,17 +525,17 @@ export default function Home() {
             </ol>
           </div>
           <div className="grid grid-cols-2 gap-5">
-            <img
+            <img loading="lazy"
               src={handStitchingProcessImg}
               alt="Artisan hand-stitching bullion wire"
               className="w-full h-full object-cover rounded border border-gold/20"
             />
-            <img
+            <img loading="lazy"
               src={beadedNecklineImg}
               alt="Beaded embroidery neckline"
               className="w-full h-full object-cover rounded border border-gold/20"
             />
-            <img
+            <img loading="lazy"
               className="col-span-2 w-full h-full object-cover rounded border border-gold/20"
               src={embroideredTrimImg}
               alt="Hand-embroidered fabric trim"
@@ -574,7 +574,7 @@ export default function Home() {
       {/* CTA */}
       <section className="bg-ink py-18">
         <div className="mx-auto max-w-300 px-6 grid grid-cols-1 gap-8 items-center text-center lg:grid-cols-[220px_1fr_220px] lg:text-left">
-          <img
+          <img loading="lazy"
             className="w-32 mx-auto aspect-square object-contain opacity-90 lg:w-full"
             src={bicycleBroochImg}
             alt="Decorative bullion bicycle brooch"
@@ -591,7 +591,7 @@ export default function Home() {
               Request A Custom Design
             </Link>
           </div>
-          <img
+          <img loading="lazy"
             className="w-32 mx-auto aspect-square object-contain opacity-90 lg:w-full"
             src={goldPatchImg}
             alt="Decorative gold embroidered patch"
@@ -616,7 +616,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <img
+          <img loading="lazy"
             src={referencePhotoExampleImg}
             alt="Reference sizing photo example"
             className="w-full aspect-square object-cover rounded border border-gold/20"
