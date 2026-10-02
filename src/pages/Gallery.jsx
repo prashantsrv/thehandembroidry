@@ -128,7 +128,7 @@ export default function Gallery() {
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
             {gallery.map((item, i) => (
               <div className={`${cardOutline} bg-navy overflow-hidden`} key={`${item.title}-${i}`}>
-                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-square object-contain p-3" />
+                <img loading="lazy" src={item.img} alt={item.title} className="w-full aspect-square object-contain p-1.5 sm:p-3" />
               </div>
             ))}
           </div>

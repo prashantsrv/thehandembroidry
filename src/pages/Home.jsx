@@ -293,22 +293,22 @@ export default function Home() {
             <img
               src={phoenixShieldImg}
               alt="Hand-embroidered phoenix shield badge"
-              className="w-full aspect-square object-cover rounded border border-gold/20"
+              className="w-full aspect-square object-contain bg-ink rounded border border-gold/20"
             />
             <img
               src={leopardPatchImg}
               alt="Hand-embroidered leopard patch"
-              className="w-full aspect-square object-cover rounded border border-gold/20"
+              className="w-full aspect-square object-contain bg-ink rounded border border-gold/20"
             />
             <img
               src={officerCapImg}
               alt="Ceremonial officer cap with gold leaf embroidery"
-              className="w-full aspect-square object-cover rounded border border-gold/20"
+              className="w-full aspect-square object-contain bg-ink rounded border border-gold/20"
             />
             <img
               src={crestShieldImg}
               alt="Royal crest hand-embroidered patch"
-              className="w-full aspect-square object-cover rounded border border-gold/20"
+              className="w-full aspect-square object-contain bg-ink rounded border border-gold/20"
             />
           </div>
         </div>

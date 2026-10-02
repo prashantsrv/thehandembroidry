@@ -82,7 +82,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroBgImg})` }} />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(6,6,10,0.75)_0%,rgba(6,6,10,0.55)_42%,rgba(6,6,10,0.3)_58%,rgba(6,6,10,0.1)_75%)]" />
         <div className="relative mx-auto max-w-300 px-6 h-full flex items-center">
-          <h1 className="font-serif text-[clamp(2.4rem,4.2vw,3.6rem)] text-gold-light">Contact Us</h1>
+          <h1 className="font-serif text-[clamp(1.9rem,4.2vw,3.6rem)] text-gold-light">Contact Us</h1>
         </div>
       </section>
 
@@ -127,40 +127,40 @@ export default function Contact() {
               <p className="text-red-400 text-center">Something went wrong. Please try again.</p>
             )}
           </form>
+        </div>
 
-          <div className="grid grid-cols-1 gap-8 mt-14 sm:grid-cols-3">
-            <div className="flex gap-4">
-              <div className="w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center shrink-0">
-                <FaMapMarkerAlt />
-              </div>
-              <div>
-                <p className="text-gold text-[0.7rem] tracking-widest uppercase mb-1">Our Location</p>
-                <p className="text-cream font-semibold mb-1">Factory Address</p>
-                <p className="text-muted text-sm">{siteConfig.address}</p>
-              </div>
+        <div className="mx-auto max-w-250 px-6 mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex gap-4 min-w-0">
+            <div className="w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center shrink-0">
+              <FaMapMarkerAlt />
             </div>
-            <div className="flex gap-4">
-              <div className="w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center shrink-0">
-                <FaClock />
-              </div>
-              <div>
-                <p className="text-gold text-[0.7rem] tracking-widest uppercase mb-1">Opening Hours</p>
-                <p className="text-cream mb-1">
-                  Mon – Sun: <span className="text-gold">9am – 10pm</span>
-                </p>
-                <p className="text-muted text-sm">Sunday: Open</p>
-              </div>
+            <div>
+              <p className="text-gold text-[0.7rem] tracking-widest uppercase mb-1">Our Location</p>
+              <p className="text-cream font-semibold mb-1">Factory Address</p>
+              <p className="text-muted text-sm">{siteConfig.address}</p>
             </div>
-            <div className="flex gap-4">
-              <div className="w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center shrink-0">
-                <FaPhoneAlt />
-              </div>
-              <div>
-                <p className="text-gold text-[0.7rem] tracking-widest uppercase mb-1">Contact</p>
-                <p className="text-muted text-sm mb-1">{siteConfig.phoneNumbers.join(', ')}</p>
-                <p className="text-muted text-sm mb-1">{siteConfig.contactEmail}</p>
-                <p className="text-muted text-sm">www.thehandembroidery.com</p>
-              </div>
+          </div>
+          <div className="flex gap-4 min-w-0">
+            <div className="w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center shrink-0">
+              <FaClock />
+            </div>
+            <div>
+              <p className="text-gold text-[0.7rem] tracking-widest uppercase mb-1">Opening Hours</p>
+              <p className="text-cream mb-1">
+                Mon – Sun: <span className="text-gold">9am – 10pm</span>
+              </p>
+              <p className="text-muted text-sm">Sunday: Open</p>
+            </div>
+          </div>
+          <div className="flex gap-4 min-w-0">
+            <div className="w-11 h-11 rounded-full border border-gold/40 text-gold flex items-center justify-center shrink-0">
+              <FaPhoneAlt />
+            </div>
+            <div>
+              <p className="text-gold text-[0.7rem] tracking-widest uppercase mb-1">Contact</p>
+              <p className="text-muted text-sm mb-1">{siteConfig.phoneNumbers.join(', ')}</p>
+              <p className="text-muted text-sm mb-1 [overflow-wrap:anywhere]">{siteConfig.contactEmail}</p>
+              <p className="text-muted text-sm [overflow-wrap:anywhere]">www.thehandembroidery.com</p>
             </div>
           </div>
         </div>

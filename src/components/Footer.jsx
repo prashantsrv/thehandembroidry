@@ -94,7 +94,7 @@ export default function Footer() {
 
       <div
         aria-hidden="true"
-        className="relative z-10 text-center font-serif font-bold text-[clamp(2.5rem,9vw,6rem)] leading-none whitespace-nowrap overflow-hidden pb-2"
+        className="relative z-10 text-center font-serif font-bold text-[clamp(1.3rem,6.6vw,6rem)] leading-none whitespace-nowrap overflow-hidden pb-2"
         style={{ color: 'rgba(212, 165, 55, 0.08)' }}
       >
         {brandName.toUpperCase()}
