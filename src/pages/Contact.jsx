@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import {
   FaPaperPlane,
   FaMapMarkerAlt,
@@ -11,6 +11,7 @@ import {
 } from 'react-icons/fa'
 import Seo from '../components/Seo'
 import { siteConfig } from '../siteConfig'
+import { validateEmail } from '../utils/validateEmail'
 import heroBgImg from '../assets/contact/hero-bg.webp'
 
 const inputClass =
@@ -44,12 +45,21 @@ const btnGold =
 
 export default function Contact() {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [emailError, setEmailError] = useState('')
+  const emailRef = useRef(null)
 
   async function handleSubmit(e) {
     e.preventDefault()
-    setStatus('sending')
 
     const form = e.target
+    const emailProblem = validateEmail(form.elements.email.value)
+    if (emailProblem) {
+      setEmailError(emailProblem)
+      emailRef.current?.focus()
+      return
+    }
+
+    setStatus('sending')
     const formData = new FormData(form)
     formData.append('access_key', siteConfig.web3formsAccessKey)
 
@@ -100,7 +110,26 @@ export default function Contact() {
             <input type="checkbox" name="botcheck" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <input type="text" name="name" placeholder="Your Name *" required className={inputClass} />
-              <input type="email" name="email" placeholder="Email Address *" required className={inputClass} />
+              <div>
+                <input
+                  ref={emailRef}
+                  type="email"
+                  name="email"
+                  placeholder="Email Address *"
+                  required
+                  autoComplete="email"
+                  aria-invalid={emailError ? 'true' : 'false'}
+                  aria-describedby={emailError ? 'email-error' : undefined}
+                  onChange={() => emailError && setEmailError('')}
+                  onBlur={(e) => e.target.value && setEmailError(validateEmail(e.target.value))}
+                  className={`${inputClass} ${emailError ? 'border-red-400 focus:border-red-400' : ''}`}
+                />
+                {emailError && (
+                  <p id="email-error" role="alert" className="mt-1.5 text-sm text-red-400">
+                    {emailError}
+                  </p>
+                )}
+              </div>
             </div>
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
               <input type="tel" name="mobile" placeholder="Mobile Number *" required className={inputClass} />
